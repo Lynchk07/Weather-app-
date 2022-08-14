@@ -36,3 +36,6 @@ Parameters
 q	required	City name, state code (only for the US) and country code divided by comma. Please use ISO 3166 country codes.
 appid	required	Your unique API key (you can always find it on your account page under the "API key" tab)
 limit	optional	Number of the locations in the API response (up to 5 results can be returned in the API response)
+
+//time display//
+<h1>Current Time &amp; Date: <br /> <span id="time-display">00:00:00</span></h1>

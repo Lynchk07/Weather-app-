@@ -1,27 +1,38 @@
-var 
-
-//var weatherData = document.getElementById ("#weather-icons")
-
-const apiKey = "62645b864f757d8e71f84817791c80ba";
-const inputVal=input.value;
-
-var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statecode},${countrycode}&$limit=${limit}&appid=${apiKey}&units=metric`;
+$(document).ready(function(){
+    $("#form-search").submit(function(event){
+        searchCity(event);
+    });
+});
 
 
+function searchCity (event){
+    event.preventDefault();
+    
+}
 
-fetch(requestUrl)
+var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&appid=62645b864f757d8e71f84817791c80ba`,
+
+fetch (requestUrl){
 .then(function(response){
     //converts to JSON object
-    return response.json();
+   return response.json();
     
-});
-
-.then(function(data,) {
+})
+.then(function(data){
     console.log(data);
-    requestUrl = data.cityname;
-    console.log("#cityname")
-});
+    requestUrl = data.city;
+    console.log(city);
+})
+.then(function(){
+    console.log(city);
+    getAttribute("#time",city);
+    $('body').setAttribute(a,b)
+ 
+})
+}
 
+
+//var weatherData = document.getElementById ("#weather-icons")
 
     //display data in HTMl
     //weatherArray = data.response.doc;
