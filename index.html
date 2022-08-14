@@ -6,26 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/style.css" >
 </head>
 
 <body>
 
-<div class="parent">
+<div class="jumbotron bg-secondary">
     <h1 class="title-area">
         Weather Dashboard
     </h1>
 <section>
     <div class="wrapper">
         <form class="search">
-                <h4>Search a City</h4>
-                <input class="cityname"></input>
-                <button>
-                    <input class="favorite styled"
-                type="button"
-                value="submit">
-                </button>
+                <h4>Search for a City:</h4>
+                <input type=text class="form-control" id="cityname"
+                placeholder ="ex. Seattle"></input>
+                <button type="submit" class = "btn btn-primary m-2">Search</button>
+            
         </form>
         <ul class="nav-list">
                 <li class="nav-item">
@@ -67,6 +68,7 @@
  <section>
         <div class="main-container">
             <h2>Current Date and City</h2>
+            <span id="date"></span> | <span id="time"></span>
                 <div class="date"></div>
                 <div 
                 class="info-box" id="day1"></div>
@@ -78,7 +80,7 @@
         </div>
     </section>
         <section class="ajax-section">
-            <div class="container-b">
+            <div class="container-b"> grid
                 <div class="div three-day"></div>
             </div>
          </section>

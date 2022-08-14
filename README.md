@@ -13,15 +13,26 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
 .main-container {
-    box-sizing: border-box;
+    display:flex;
     background-color: bisque;
     justify-content: center;
     align-content: flex-start;
 }
 
 .weather-threeday {
-    box-sizing: border-box;
+    display:flex;
+    height:900px
     justify-content:center;
-    align-content: flex-end;
-    background-color:lightblue;
+    align-items:center;
+    flex-direction:column; (vertical axis)
 }
+
+
+API call
+
+http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+
+Parameters
+q	required	City name, state code (only for the US) and country code divided by comma. Please use ISO 3166 country codes.
+appid	required	Your unique API key (you can always find it on your account page under the "API key" tab)
+limit	optional	Number of the locations in the API response (up to 5 results can be returned in the API response)

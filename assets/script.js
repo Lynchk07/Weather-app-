@@ -1,26 +1,28 @@
-
+var 
 
 //var weatherData = document.getElementById ("#weather-icons")
 
-var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statecode},${countrycode}&limit=${limit}&lat=${lat}&lon=${lon}&exclude=${part}&appid=62645b864f757d8e71f84817791c80ba`
+const apiKey = "62645b864f757d8e71f84817791c80ba";
+const inputVal=input.value;
+
+var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statecode},${countrycode}&$limit=${limit}&appid=${apiKey}&units=metric`;
+
+
 
 fetch(requestUrl)
 .then(function(response){
     //converts to JSON object
     return response.json();
+    
+});
 
-})
-
-.then(function(data) {
+.then(function(data,) {
     console.log(data);
     requestUrl = data.cityname;
-    console.log("cityname[0]")
+    console.log("#cityname")
 });
 
-then(function(cityname){
-    console.log(city);
-  
-});
+
     //display data in HTMl
     //weatherArray = data.response.doc;
     //for (let i = 0; i < array.//length; i++) {
