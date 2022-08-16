@@ -16,7 +16,7 @@ This is a weather  app that uses openweather API's to pull data
 https://lynchk07.github.io/Weather-app-/
 
 # Github:
-git@github.com:Lynchk07/Weather-app-.git
+[git@github.com:Lynchk07/Weather-app-.git](https://github.com/Lynchk07/Weather-app-)
 
 # future updates 
 Work through javascript to complete page. Add 5 day forecast and consolelog searches in local storage. 
