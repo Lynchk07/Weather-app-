@@ -49,13 +49,11 @@ function searchCity(event) {
 
 
 
-
-var specificCity = document.getElementById("nav-item-chi", "nav-item-new", "nav-item-sea", "nav-item-atl", "nav-item-den", "nav-item-orl", "nav-item-san", "nav-item-aus").addEventListener("click")
-function displayWeather() {
+document.addEventListener("click", specificCity)
+var specificCity = document.getElementById("nav-item-chi", "nav-item-new", "nav-item-sea", "nav-item-atl", "nav-item-den", "nav-item-orl", "nav-item-san", "nav-item-aus")
     document.getElementById("maincontainer").innerHTML = city();
-}
+  
 
-//var weatherData = document.getElementById ("#weather-icons")
 
 
 
