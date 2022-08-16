@@ -1,45 +1,60 @@
-$(document).ready(function(){
-    $("#form-search").submit(function(event){
+$(document).ready(function () {
+    $("#form-search").submit(function (event) {
         searchCity(event);
+
     });
 });
 
 
-function searchCity (event){
+function searchCity(event) {
     event.preventDefault();
+    console.log(document.getElementById("cityname").value)
+    var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${document.getElementById("cityname").value}&appid=62645b864f757d8e71f84817791c80ba`
     
+    fetch(requestUrl)
+        .then(function (response) {
+            //converts to JSON object
+            console.log(response)
+            return response.json();
+    
+        })
+        .then(function (data) {
+            console.log(data);
+            // console.log(city);
+            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&appid=62645b864f757d8e71f84817791c80ba`)
+                .then(function (catfish) {
+                    //converts to JSON object
+                    console.log(catfish)
+                    return catfish.json();
+    
+                })
+                .then(function (info) {
+                    console.log(info);
+                    document.querySelector(".temp").innerHTML = info.current.temp;
+                    document.querySelector(".humidity").innerHTML = info.current.humidity;
+                    document.querySelector(".wind").innerHTML = info.current.wind_speed;
+                    document.querySelector(".UV-index").innerHTML = info.current.uvi;
+                    // console.log(city);
+                })
+        })
+
 }
 
-var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&appid=62645b864f757d8e71f84817791c80ba`,
+// .then(function(){
+//     console.log(city);
+//     getAttribute("#time",city);
+//     $('body').setAttribute(a,b)
 
-fetch (requestUrl){
-.then(function(response){
-    //converts to JSON object
-   return response.json();
-    
-})
-.then(function(data){
-    console.log(data);
-    requestUrl = data.city;
-    console.log(city);
-})
-.then(function(){
-    console.log(city);
-    getAttribute("#time",city);
-    $('body').setAttribute(a,b)
- 
-})
+// })
+
+
+var specificCity = document.getElementById("nav-item-chi", "nav-item-new", "nav-item-sea", "nav-item-atl", "nav-item-den", "nav-item-orl", "nav-item-san", "nav-item-aus").addEventListener("click", displayWeather);
+
+function displayWeather() {
+    document.getElementById("histroy-weather").innerHTML = city();
 }
-
 
 //var weatherData = document.getElementById ("#weather-icons")
 
-    //display data in HTMl
-    //weatherArray = data.response.doc;
-    //for (let i = 0; i < array.//length; i++) {
-       //var listForecastFive = //document.createElement("li");
-        //listForecastFive.textContent = weatherArray[i].description;
-        //weatherData.appendChild(listForecastFive);
-        
-   // }
-//});
+
+``
