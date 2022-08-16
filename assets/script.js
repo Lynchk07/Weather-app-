@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function () {
     $("#form-search").submit(function (event) {
         searchCity(event);
@@ -36,25 +39,23 @@ function searchCity(event) {
                     document.querySelector(".UV-index").innerHTML = info.current.uvi;
                     // console.log(city);
                 })
+                //section to bring in current time and day
+        //         let timeDisplayEl = $("#time-display")
+        //         var rightNow = moment().format('MMM DD, YYYY [at] HH:mm a');
+        //             timeDisplayEl.text(rightNow);
         })
 
 }
 
-// .then(function(){
-//     console.log(city);
-//     getAttribute("#time",city);
-//     $('body').setAttribute(a,b)
-
-// })
 
 
-var specificCity = document.getElementById("nav-item-chi", "nav-item-new", "nav-item-sea", "nav-item-atl", "nav-item-den", "nav-item-orl", "nav-item-san", "nav-item-aus").addEventListener("click", displayWeather);
 
+var specificCity = document.getElementById("nav-item-chi", "nav-item-new", "nav-item-sea", "nav-item-atl", "nav-item-den", "nav-item-orl", "nav-item-san", "nav-item-aus").addEventListener("click")
 function displayWeather() {
-    document.getElementById("histroy-weather").innerHTML = city();
+    document.getElementById("maincontainer").innerHTML = city();
 }
 
 //var weatherData = document.getElementById ("#weather-icons")
 
 
-``
+
