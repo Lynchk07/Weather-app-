@@ -12,7 +12,7 @@ $(document).ready(function () {
 function searchCity(event) {
     event.preventDefault();
     console.log(document.getElementById("cityname").value)
-    var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${document.getElementById("cityname").value}&appid=62645b864f757d8e71f84817791c80ba`
+    var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${document.getElementById("cityname").value}&appid=62645b864f757d8e71f84817791c80ba`
     
     fetch(requestUrl)
         .then(function (response) {
